@@ -1,9 +1,9 @@
 class Pelicula():
-    def _init_(self, codigo=0, nombre=''):
+    def __init__(self, codigo=0, nombre=''):
         self.codigo = codigo
         self.nombre = nombre
 
-    def _str_(self):
+    def __str__(self):
         return "Nombre: %d %s" % (self.codigo, self.nombre)
 
     @property
@@ -24,7 +24,7 @@ class Pelicula():
 
 
 class Catalogo():
-    def _init_(self):
+    def __init__(self):
         self.catalogo = {}
 
     @property
@@ -35,7 +35,7 @@ class Catalogo():
     def catalogo(self, value):
         self._catalogo = value
 
-    def _str_(self):
+    def __str__(self):
         string = ''
         for pelicula in self.catalogo.values():
             string += '\nNombre: ' + pelicula.nombre
@@ -45,7 +45,7 @@ class Catalogo():
         self.catalogo[pelicula.codigo] = pelicula
 
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     pelicula = Pelicula(1, "Avengers: Endgame")
     catalogo = Catalogo()
     catalogo.add(pelicula)
